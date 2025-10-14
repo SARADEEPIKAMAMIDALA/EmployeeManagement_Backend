@@ -1,13 +1,33 @@
+//package com.klu;
+//
+//import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
+//
+//@SpringBootApplication
+//public class EmployeeManagementCicdApplication {
+//
+//	public static void main(String[] args) {
+//		SpringApplication.run(EmployeeManagementCicdApplication.class, args);
+//	}
+//
+//}
+
 package com.klu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class EmployeeManagementCicdApplication {
+public class EmployeeManagementCicdApplication extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(EmployeeManagementCicdApplication.class, args);
-	}
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(EmployeeManagementCicdApplication.class);
+    }
 
+    public static void main(String[] args) {
+        SpringApplication.run(EmployeeManagementCicdApplication.class, args);
+    }
 }
